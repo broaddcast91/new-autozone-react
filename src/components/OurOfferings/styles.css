@@ -1,0 +1,7 @@
+.serviceCard {
+  border: 0.5px solid #d1d5db;
+  
+  background: #fff
+    url(https://www.ashokleyland.com/pwa/img/FE/al-service-card.png) no-repeat
+    right bottom;
+}
