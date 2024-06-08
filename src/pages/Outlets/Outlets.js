@@ -141,6 +141,7 @@ const MultipleMarkerMap = () => {
             },
           ],
         };
+        
         const marker = window.mappls.Marker({
           map: map,
           position: geoData,
