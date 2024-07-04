@@ -13,7 +13,67 @@ import { MdAirlineSeatReclineExtra } from 'react-icons/md';
 import { MdSpeed } from 'react-icons/md';
 import { ImPower } from 'react-icons/im';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import 'react-image-gallery/styles/css/image-gallery.css';
+import ReactImageGallery from 'react-image-gallery';
+import './vehicles.css';
+import { FaHandPointRight } from 'react-icons/fa';
+import { PiPaperPlaneRightFill } from 'react-icons/pi';
+import HomepageForm from '../../components/HomepageForm';
 
+const exterior = [
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/badaDost1440620.png',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/badaDost1440620.png',
+  },
+
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/01_Bada-Dost-i4-Ultra-Blue.jpg',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/01_Bada-Dost-i4-Ultra-Blue.jpg',
+  },
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/02_Bada-Dost-i4-Ultra-Blue.jpg',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/02_Bada-Dost-i4-Ultra-Blue.jpg',
+  },
+];
+
+const interior = [
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/Bada-Dost-3-Seater-People.jpg',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/Bada-Dost-3-Seater-People.jpg',
+  },
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/Driver-Sleeping.jpg',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/Driver-Sleeping.jpg',
+  },
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/Interior-2.jpg',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/Interior-2.jpg',
+  },
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/Bada-Dost_1605-final.jpg',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/Bada-Dost_1605-final.jpg',
+  },
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/Bada-Dost_2140-final.jpg',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Badadost-3-gallery/all/Bada-Dost_2140-final.jpg',
+  },
+];
 export const scvproducts = [
   {
     id: 1,
@@ -312,10 +372,12 @@ const BadaDosti2 = () => {
     <div className='bg-white'>
       <MainHeader />
       <BadaDosti2Hero />
+      <HomepageForm />
       <ExploreCards />
       <VehicleInfo />
       <TabLayout />
       <GalleryComponent />
+      <HomepageForm />
       <Footer />
     </div>
   );
@@ -334,7 +396,7 @@ const BadaDosti2Hero = () => {
           alt='dost-banner'
         />
         <div className='absolute inset-0 bg-black opacity-50'></div>
-        <div className='relative z-10 flex items-center justify-center h-full'>
+        <div className='relative  flex items-center justify-center h-full'>
           <h1 className='text-4xl md:text-6xl lg:text-8xl font-bold text-white text-center'>
             Bada Dost i2
           </h1>
@@ -347,7 +409,7 @@ const BadaDosti2Hero = () => {
 const ExploreCards = () => {
   return (
     <>
-      <div className='bg-white'>
+      <div className='bg-white mt-10'>
         <div className='container mx-auto py-10'>
           <div className='text-3xl font-bold'>
             Explore and experience Bada Dost <br /> in a whole new way.{' '}
@@ -363,84 +425,101 @@ const ExploreCards = () => {
           breakpoints={{
             640: {
               slidesPerView: 1,
-              spaceBetween: 20,
+              spaceBetween: 10,
             },
             768: {
-              slidesPerView: 2,
-              spaceBetween: 40,
+              slidesPerView: 3,
+              spaceBetween: 10,
             },
             1024: {
               slidesPerView: 4,
-              spaceBetween: 50,
+              spaceBetween: 30,
             },
           }}
           modules={[Autoplay, Navigation]}
           className='mySwiper'
         >
           <SwiperSlide>
-            <div className='p-4 rounded-lg  bg-white shadow-md'>
-              <img
-                src='https://via.placeholder.com/150'
-                alt='Card Image'
-                className='w-full h-32 object-cover rounded-t-lg'
-              />
-              <h2 className='mt-2 text-xl font-semibold'>Card Title 1</h2>
-              <p className='mt-1 text-gray-600'>Card description goes here.</p>
+            <div className='p-4 rounded-xl custom-gradient shadow-md text-white h-96'>
+              <div className='flex items-center'>
+                <PiPaperPlaneRightFill className='w-5 h-5 mr-2' />
+                <span className='text-lg font-bold'>BODY</span>
+              </div>
+
+              <div className='mt-6 pr-10 pt-10 pb-10'>
+                <span className='text-3xl font-normal text-left'>
+                  Superior load
+                  <br />
+                  body length -<br />
+                  2745mm (9ft)
+                </span>
+              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className='p-4 bg-white rounded-lg shadow-md'>
-              <img
-                src='https://via.placeholder.com/150'
-                alt='Card Image'
-                className='w-full h-32 object-cover rounded-t-lg'
-              />
-              <h2 className='mt-2 text-xl font-semibold'>Card Title 2</h2>
-              <p className='mt-1 text-gray-600'>Card description goes here.</p>
+            <div className='p-4 rounded-xl custom-bg shadow-md text-white h-96 '>
+              <div className='flex items-center '>
+                <PiPaperPlaneRightFill className='w-5 h-5 mr-2 ' />
+                <span className='text-lg font-bold'>ENGINE</span>
+              </div>
+
+              <div className='justify-start '>
+                <span className='text-2xl font-normal text-left block pt-10'>
+                  Best-in-class 70
+                  <br />
+                  hp power and 190 -<br />
+                  Nm torque
+                </span>
+              </div>
+
+              <div className='flex justify-center items-center h-52'>
+                <img
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/Bada-Dost-Engine-P-15.png'
+                  alt=''
+                  className='max-h-full max-w-full p-5'
+                />
+              </div>
+            </div>
+          </SwiperSlide>
+          {/* second set */}
+          <SwiperSlide>
+            <div className='p-4 rounded-xl custom-gradient shadow-md text-white h-96'>
+              <div className='flex items-center'>
+                <PiPaperPlaneRightFill className='w-5 h-5 mr-2' />
+                <span className='text-lg font-bold'>PAYLOAD</span>
+              </div>
+
+              <div className='mt-6 pr-2 pt-10 pb-10'>
+                <span className='text-3xl font-normal text-left block'>
+                  Superior payload
+                  <br />
+                  (1425 kg)
+                </span>
+              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className='p-4 bg-white rounded-lg shadow-md'>
-              <img
-                src='https://via.placeholder.com/150'
-                alt='Card Image'
-                className='w-full h-32 object-cover rounded-t-lg'
-              />
-              <h2 className='mt-2 text-xl font-semibold'>Card Title 3</h2>
-              <p className='mt-1 text-gray-600'>Card description goes here.</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className='p-4 bg-white rounded-lg shadow-md'>
-              <img
-                src='https://via.placeholder.com/150'
-                alt='Card Image'
-                className='w-full h-32 object-cover rounded-t-lg'
-              />
-              <h2 className='mt-2 text-xl font-semibold'>Card Title 1</h2>
-              <p className='mt-1 text-gray-600'>Card description goes here.</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className='p-4 bg-white rounded-lg shadow-md'>
-              <img
-                src='https://via.placeholder.com/150'
-                alt='Card Image'
-                className='w-full h-32 object-cover rounded-t-lg'
-              />
-              <h2 className='mt-2 text-xl font-semibold'>Card Title 2</h2>
-              <p className='mt-1 text-gray-600'>Card description goes here.</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className='p-4 bg-white rounded-lg shadow-md'>
-              <img
-                src='https://via.placeholder.com/150'
-                alt='Card Image'
-                className='w-full h-32 object-cover rounded-t-lg'
-              />
-              <h2 className='mt-2 text-xl font-semibold'>Card Title 3</h2>
-              <p className='mt-1 text-gray-600'>Card description goes here.</p>
+            <div className='p-4 rounded-xl custom-bg shadow-md text-white h-96 '>
+              <div className='flex items-center '>
+                <PiPaperPlaneRightFill className='w-5 h-5 mr-2 ' />
+                <span className='text-lg font-bold'>COMFORT</span>
+              </div>
+
+              <div className='justify-start '>
+                <span className='text-2xl font-normal text-left block pt-10'>
+                  First in Class
+                  <br />
+                  seats (1+2)
+                </span>
+              </div>
+
+              <div className='flex justify-center items-center h-52'>
+                <img
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/images/interior.png'
+                  alt=''
+                  className='max-h-full max-w-full p-6 rounded-3xl'
+                />
+              </div>
             </div>
           </SwiperSlide>
           {/* Add more SwiperSlide components as needed */}
@@ -453,7 +532,7 @@ const ExploreCards = () => {
 const VehicleInfo = () => {
   return (
     <>
-      <div className='container mx-auto py-10'>
+      <div className='container mx-auto py-10 mt-10'>
         <div className='flex justify-between items-center p-4'>
           <div className='text-left'>
             <p className='text-4xl font-bold'>BADA DOST i2</p>
@@ -507,7 +586,7 @@ const TabLayout = () => {
     <div className='container mx-auto'>
       <Tab.Group>
         <Tab.List className='flex flex-row space-x-1 border-b-2 border-gray-300'>
-          {['BADA DOST i2', 'SPECIFICATIONS', 'GALLERY'].map((tab) => (
+          {['BADA DOST i2', 'SPECIFICATIONS'].map((tab) => (
             <Tab
               key={tab}
               className={({ selected }) =>
@@ -824,18 +903,22 @@ const Tab2Specifications = () => {
 const GalleryComponent = () => {
   const [activeTab, setActiveTab] = useState('Interior');
 
-  const tabs = ['Interior', 'Exterior', '360°'];
+  const tabs = ['Interior', 'Exterior'];
 
   const renderContent = () => {
     switch (activeTab) {
       case 'Interior':
-        return <p>Interior Content</p>;
+        return (
+          <>
+            <InteriorGallery />
+          </>
+        );
       case 'Exterior':
-        return <p>Exterior Content</p>;
-      case '360°':
-        return <p>360° Content</p>;
-      default:
-        return null;
+        return (
+          <>
+            <ExteriorGallery />
+          </>
+        );
     }
   };
 
@@ -846,20 +929,20 @@ const GalleryComponent = () => {
 
   return (
     <>
-      <div className='container mx-auto py-10'>
+      <div className='container mx-auto py-10 mt-10'>
         <div className='text-left'>
           <p className='text-4xl font-bold'>Gallery</p>
         </div>
-        <ul className='flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400 mt-10'>
+        <ul className='flex flex-wrap justify-center text-2xl font-bold text-center rounded-4xl text-gray-500 dark:text-gray-400 mt-10'>
           {tabs.map((tab) => (
             <li className='me-2' key={tab}>
               <a
                 href='#'
                 onClick={(event) => handleTabClick(event, tab)}
-                className={`inline-block px-4 py-3 rounded-lg ${
+                className={`inline-block px-6 py-4 rounded-4xl ${
                   activeTab === tab
                     ? 'text-white bg-[#9E2A31] rounded-3xl'
-                    : 'hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white'
+                    : 'hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white hover:rounded-3xl border rounded-3xl'
                 }`}
                 aria-current={activeTab === tab ? 'page' : undefined}
               >
@@ -872,6 +955,48 @@ const GalleryComponent = () => {
       </div>
     </>
   );
+};
+
+const InteriorGallery = () => {
+  return (
+    <>
+      <div style={{ maxWidth: '1000px', margin: 'auto' }}>
+        <ReactImageGallery
+          items={interior}
+          showNav={true}
+          showThumbnails={true}
+          showFullscreenButton={true}
+          showPlayButton={true}
+          autoPlay={true}
+          slideInterval={5000}
+          style={{ maxWidth: '100%', height: '600px' }} // Custom styles for the gallery itself
+        />
+      </div>
+    </>
+  );
+};
+
+const ExteriorGallery = () => {
+  return (
+    <>
+      <div style={{ maxWidth: '1000px', margin: 'auto' }}>
+        <ReactImageGallery
+          items={exterior}
+          showNav={true}
+          showThumbnails={true}
+          showFullscreenButton={true}
+          showPlayButton={true}
+          autoPlay={true}
+          slideInterval={5000}
+          style={{ maxWidth: '100%', height: '600px' }} // Custom styles for the gallery itself
+        />
+      </div>
+    </>
+  );
+};
+
+const ThreeSixtyBadaDosti2 = () => {
+  return <></>;
 };
 
 export default BadaDosti2;

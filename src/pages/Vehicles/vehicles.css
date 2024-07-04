@@ -1,0 +1,65 @@
+.custom-gradient {
+  background: linear-gradient(132deg, #dfbdc0 -47.55%, #9e2a31 51.26%), #fcfcfc;
+}
+
+/* Define the background image class with the image at the bottom */
+.custom-bg {
+  background-image: url('https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/autozone-2024/assets/icons/exploreBackgound+copy1.png');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  border-radius: 0.75rem; /* To match rounded-xl class */
+  height: 24rem; /* To match h-96 class */
+  padding: 1rem; /* To match p-4 class */
+  color: black; /* Text color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* To match shadow-md class */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative; /* To position the text overlay */
+  overflow: hidden;
+}
+
+/* Flex container for items alignment */
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Spacing classes */
+.mt-6 {
+  margin-top: 1.5rem; /* To match mt-6 class */
+}
+
+.pr-10 {
+  padding-right: 2.5rem; /* To match pr-10 class */
+}
+
+.pt-10 {
+  padding-top: 2.5rem; /* To match pt-10 class */
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem; /* To match pb-10 class */
+}
+
+/* Font styles */
+.font-bold {
+  font-weight: bold; /* To match font-bold class */
+}
+
+.text-lg {
+  font-size: 1.125rem; /* To match text-lg class */
+}
+
+.text-3xl {
+  font-size: 1.875rem; /* To match text-3xl class */
+}
+
+.text-left {
+  text-align: left; /* To match text-left class */
+}
+
+.font-normal {
+  font-weight: normal; /* To match font-normal class */
+}
