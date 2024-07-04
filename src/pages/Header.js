@@ -1,14 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import {
-  Popover,
-  Transition,
-  PopoverButton,
-  PopoverPanel,
-} from '@headlessui/react';
-import { MenuIcon, ChevronDownIcon, XIcon } from '@heroicons/react/outline';
-import { Dialog, Tab } from '@headlessui/react';
+import { Popover, Transition } from '@headlessui/react';
+import { MenuIcon, ChevronDownIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
-import { TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 
 const tabs = ['SCV Goods Carrier', 'LCV Goods Carrier', 'LCV Passenger'];
 
@@ -97,7 +90,7 @@ const navigation = {
           name: 'Partner 6 Type',
           brand_logo:
             'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/invicto/Invicto+Logo-header.webp',
-          href: '/partner-6-tyre',
+          href: '/maruti-invicto-price-in-hyderabad',
           imageSrc: require('../assets/thumbnails/Partner_6T_HSD-1.jpg'),
           imageAlt: 'Partner 6 Type',
           price: '₹ 24,79,000*',
@@ -106,7 +99,7 @@ const navigation = {
           name: 'Partner 4 Tyre',
           brand_logo:
             'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/fronx/Flash_header_Menu_logo.webp',
-          href: '/partner-4-tyre',
+          href: '/maruti-fronx-price-in-hyderabad',
           imageSrc: require('../assets/thumbnails/Partner-4T_HSD-2.jpg'),
           imageAlt: 'Partner 4 Tyre',
           price: '₹ 7,46,500*',
@@ -117,7 +110,7 @@ const navigation = {
           name: 'School Bus',
           brand_logo:
             'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/invicto/Invicto+Logo-header.webp',
-          href: '/school-bus',
+          href: '/maruti-invicto-price-in-hyderabad',
           imageSrc: require('../assets/thumbnails/MiTR-School-Bus.jpg'),
           imageAlt: 'School Bus',
           price: '₹ 24,79,000*',
@@ -126,7 +119,7 @@ const navigation = {
           name: 'Staff Bus',
           brand_logo:
             'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/fronx/Flash_header_Menu_logo.webp',
-          href: '/staff-bus',
+          href: '/maruti-fronx-price-in-hyderabad',
           imageSrc: require('../assets/thumbnails/MiTR-Staff-Bus.jpg'),
           imageAlt: 'Staff Bus',
           price: '₹ 7,46,500*',
@@ -137,26 +130,42 @@ const navigation = {
   pages: [
     { name: 'Home', to: '/' },
     { name: 'About', to: '/about' },
+    { name: 'Awards', to: '/awards' },
+    { name: 'Careers', to: '/careers' },
   ],
   servicepages: [
     {
       name: 'Insurance',
-      to: '/insurance',
+      to: '/maruti-car-insurance',
     },
     {
       name: 'Finance',
-      to: '/finance',
+      to: '/maruti-car-finance',
+    },
+    {
+      name: 'Corporate',
+      to: '/corporate',
     },
   ],
 
   outlets: [
     {
       name: 'Showrooms',
-      to: '/showrooms',
+      to: '/maruti-nexa-showroom-outlets-in-hyderabad',
     },
     {
       name: 'Workshop',
-      to: '/workshop',
+      to: '/maruti-nexa-workshop-outlets-in-hyderabad',
+    },
+    {
+      name: 'Truevalue',
+      to: '/maruti-nexa-truevalue-outlets-in-hyderabad',
+    },
+  ],
+  more: [
+    {
+      name: 'CNG',
+      to: '/cng',
     },
   ],
 };
@@ -167,7 +176,7 @@ function classNames(...classes) {
 
 function MainHeader({ category, menuoption }) {
   const [navbar, setNavbar] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [setOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   useEffect(() => {
@@ -189,156 +198,6 @@ function MainHeader({ category, menuoption }) {
   return (
     <div className={navbar ? 'bg-white px-0 border' : 'bg-white px-3 border'}>
       {/* Mobile menu */}
-      <Transition show={open} as={Fragment}>
-        <Dialog
-          as='div'
-          className='fixed inset-0 flex z-40 lg:hidden'
-          onClose={() => setOpen(false)}
-        >
-          <Transition
-            show={open}
-            as={Fragment}
-            enter='transition-opacity ease-linear duration-300'
-            enterFrom='opacity-0'
-            enterTo='opacity-100'
-            leave='transition-opacity ease-linear duration-300'
-            leaveFrom='opacity-100'
-            leaveTo='opacity-0'
-          >
-            <Dialog.Overlay className='fixed inset-0 bg-black bg-opacity-25' />
-          </Transition>
-
-          <Transition
-            show={open}
-            as={Fragment}
-            enter='transition ease-in-out duration-300 transform'
-            enterFrom='-translate-x-full'
-            enterTo='translate-x-0'
-            leave='transition ease-in-out duration-300 transform'
-            leaveFrom='translate-x-0'
-            leaveTo='-translate-x-full'
-          >
-            <div className='relative max-w-xs w-full bg-white shadow-xl pb-12 flex flex-col overflow-y-auto'>
-              <div className='px-4 pt-5 pb-2 flex'>
-                <button
-                  type='button'
-                  className='-m-2 p-2 rounded-md inline-flex items-center justify-center text-gray-400'
-                  onClick={() => setOpen(false)}
-                >
-                  <span className='sr-only'>Close menu</span>
-                  <XIcon className='h-6 w-6' aria-hidden='true' />
-                </button>
-              </div>
-
-              {/* Links */}
-              <TabGroup
-                as='div'
-                className='mt-2'
-                onClick={() => setOpen(false)}
-              >
-                <div className='border-b border-gray-200'>
-                  <TabList className='-mb-px flex px-4 space-x-8'>
-                    {navigation.categories.map((category) => (
-                      <Tab
-                        key={category.name}
-                        className={({ selected }) =>
-                          classNames(
-                            selected
-                              ? 'text-[#f01b28] border-[#f01b28]'
-                              : 'text-gray-900 border-transparent',
-                            'flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium'
-                          )
-                        }
-                      >
-                        {category.name}
-                      </Tab>
-                    ))}
-                  </TabList>
-                </div>
-                <TabPanels as={Fragment}>
-                  {navigation.categories.map((category) => (
-                    <TabPanel
-                      key={category.name}
-                      className='pt-10 pb-8 px-4 space-y-10'
-                    >
-                      <div className='grid grid-cols-2 gap-x-4'>
-                        {category.featured.map((item) => (
-                          <div
-                            key={item.name}
-                            className='group relative text-sm font-semibold'
-                          >
-                            <Link to={item.href}>
-                              <div className='flex justify-center pb-2'>
-                                <img
-                                  src={item.brand_logo}
-                                  alt={item.imageAlt}
-                                  className='object-center object-cover'
-                                />
-                              </div>
-                              <div className='aspect-w-1 aspect-h-1 rounded-lg overflow-hidden group-hover:opacity-75 mb-2'>
-                                <img
-                                  src={item.imageSrc}
-                                  alt={item.imageAlt}
-                                  className='object-center object-cover'
-                                />
-                              </div>
-                            </Link>
-                          </div>
-                        ))}
-                      </div>
-                    </TabPanel>
-                  ))}
-                </TabPanels>
-              </TabGroup>
-
-              <div className='border-t border-gray-200 py-6 px-4 space-y-6'>
-                {navigation.pages.map((page) => (
-                  <div key={page.name} className='flow-root'>
-                    <Link
-                      to={page.to}
-                      className='-m-2 p-2 block font-medium text-gray-900'
-                    >
-                      {page.name}
-                    </Link>
-                  </div>
-                ))}
-                <Link
-                  to='/contact-us'
-                  className='-m-2 p-2 block font-medium text-gray-900'
-                >
-                  Contact
-                </Link>
-              </div>
-
-              <div className='border-t border-gray-200 py-6 px-4 space-y-6'>
-                {navigation.servicepages.map((page) => (
-                  <div key={page.name} className='flow-root'>
-                    <Link
-                      to={page.to}
-                      className='-m-2 p-2 block font-medium text-gray-900'
-                    >
-                      {page.name}
-                    </Link>
-                  </div>
-                ))}
-              </div>
-
-              <div className='border-t border-gray-200 py-6 px-4 space-y-6'>
-                {navigation.outlets.map((page) => (
-                  <div key={page.name} className='flow-root'>
-                    <Link
-                      to={page.to}
-                      className='-m-2 p-2 block font-medium text-gray-900'
-                    >
-                      {page.name}
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Transition>
-        </Dialog>
-      </Transition>
 
       {/* Desktop, Tab Menu */}
       <div
@@ -373,7 +232,7 @@ function MainHeader({ category, menuoption }) {
                 </button>
 
                 {/* Flyout menus */}
-                <Popover className='hidden ml-auto lg:block lg:self-stretch'>
+                <Popover.Group className='hidden ml-auto lg:block lg:self-stretch'>
                   <div className='h-full flex space-x-8'>
                     <Link
                       key='Home'
@@ -387,7 +246,7 @@ function MainHeader({ category, menuoption }) {
                         {({ open }) => (
                           <>
                             <div className='relative flex'>
-                              <Popover
+                              <Popover.Button
                                 className={classNames(
                                   open
                                     ? 'border-red-600 text-red-600'
@@ -402,7 +261,7 @@ function MainHeader({ category, menuoption }) {
                                     'ml-1 h-4 w-4 group-hover:text-black-200'
                                   )}
                                 />
-                              </Popover>
+                              </Popover.Button>
                             </div>
 
                             <Transition
@@ -752,7 +611,7 @@ function MainHeader({ category, menuoption }) {
                       Contact
                     </Link>
                   </div>
-                </Popover>
+                </Popover.Group>
               </div>
             </div>
           </nav>
