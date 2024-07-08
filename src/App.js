@@ -15,6 +15,11 @@ import DostCNG from './pages/Vehicles/DostCNG';
 import BadaDostCNG from './pages/Vehicles/BadaDostCNG';
 import DostStrong from './pages/Vehicles/DostStrong';
 import DostPlus from './pages/Vehicles/DostPlus';
+import AllVehicles from './pages/Vehicles/AllVehicles';
+import DostXL from './pages/Vehicles/DostXL';
+import BadaDosti4LNT from './pages/Vehicles/BadaDosti4LNT';
+import BadaDosti3PlusLNT from './pages/Vehicles/BadaDosti3PlusLNT';
+import BadaDosti3Plus from './pages/Vehicles/BadaDosti3Plus';
 
 function App() {
   return (
@@ -32,7 +37,11 @@ function App() {
           <Route path='/dost-cng' element={<DostCNG />} />
           <Route path='/bada-dost-i4' element={<BadaDosti4 />} />
           <Route path='/dost-lite' element={<DostLiTE />} />
-          <Route path='/dost-plus-cng' element={<DostPlusCNG />} />
+          <Route path='/dost-xl' element={<DostXL />} />
+          <Route path='/bada-dost-i4-lnt' element={<BadaDosti4LNT />} />
+          <Route path='/bada-dost-i3-plus-lnt' element={<BadaDosti3PlusLNT />} />
+          <Route path='/bada-dost-i3-plus' element={<BadaDosti3Plus />} />
+          <Route path='/allvehicles' element={<AllVehicles />} />
           <Route path='/outlet' element={<Outlets />} />
           <Route path='/finance' element={<Finance />} />
           <Route path='/insurance' element={<Insurance />} />
