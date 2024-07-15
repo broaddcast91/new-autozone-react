@@ -87,7 +87,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-const BadaDosti3PlusLNT = () => {
+const SchoolBus = () => {
   return (
     <div className='bg-white'>
       <MainHeader />
@@ -112,13 +112,13 @@ const BadaDosti2Hero = () => {
       >
         <img
           className='absolute inset-0 w-full h-full object-cover'
-          src={require('../../assets/banners/01_Bada-Dost-i3-with-LNT_Banner-Desktop-1440x620px.jpg')}
+          src={require('../../assets/banners/01_Dost-XL_Banner-Desktop-1440x620px.jpg')}
           alt='dost-banner'
         />
         <div className='absolute inset-0 bg-black opacity-50'></div>
         <div className='relative  flex items-center justify-center h-full'>
           <h1 className='text-4xl md:text-6xl lg:text-8xl font-bold text-white text-center'>
-            Bada Dost i3 Plus LNT
+            Dost XL
           </h1>
         </div>
       </div>
@@ -255,7 +255,7 @@ const VehicleInfo = () => {
       <div className='container mx-auto py-10 mt-10'>
         <div className='flex justify-between items-center p-4'>
           <div className='text-left'>
-            <p className='text-4xl font-bold'>Bada Dost i3 Plus LNT</p>
+            <p className='text-4xl font-bold'>Dost XL</p>
           </div>
 
           <div className='flex justify-end items-center space-x-4 text-right'>
@@ -306,7 +306,7 @@ const TabLayout = () => {
     <div className='container mx-auto'>
       <Tab.Group>
         <Tab.List className='flex flex-row space-x-1 border-b-2 border-gray-300'>
-          {['Bada Dost i3 Plus LNT', 'SPECIFICATIONS'].map((tab) => (
+          {['Dost XL', 'SPECIFICATIONS'].map((tab) => (
             <Tab
               key={tab}
               className={({ selected }) =>
@@ -438,7 +438,7 @@ const Tab2Specifications = () => {
               role='button'
               className='btn m-1 text-3xl flex items-center text-[#9E2A31]'
             >
-              Bada Dost i3 Plus LNT
+              Dost XL
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-5 w-5 ml-1'
@@ -461,14 +461,12 @@ const Tab2Specifications = () => {
             >
               <li className='text-3xl rounded-md hover:bg-red-200 text-[#9E2A31]'>
                 <a>
-                  Bada Dost i3 Plus LNT|{' '}
-                  <span className='text-xs ml-4'>Price</span> ₹ 9.00 L
+                  Dost XL| <span className='text-xs ml-4'>Price</span> ₹ 9.00 L
                 </a>
               </li>
               <li>
                 <a className='text-3xl hover:bg-red-200 text-[#9E2A31]'>
-                  Bada Dost i3 Plus LNT|{' '}
-                  <span className='text-xs ml-4'>Price</span> ₹ 9.00 L
+                  Dost XL| <span className='text-xs ml-4'>Price</span> ₹ 9.00 L
                 </a>
               </li>
             </ul>
@@ -715,4 +713,4 @@ const ExteriorGallery = () => {
   );
 };
 
-export default BadaDosti3PlusLNT;
+export default SchoolBus;

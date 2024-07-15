@@ -7,10 +7,12 @@ import OurOfferings from '../components/OurOfferings/OurOfferings';
 import OurCoreValues from '../components/OurCoreValues/OurCoreValues';
 import UltimateJourney from '../components/UltimateJourney/UltimateJourney';
 import Footer from '../components/Footer/Footer';
+import TopHeader from './TopHeader';
 
 const Home = () => {
   return (
     <div className='bg-white'>
+      <TopHeader />
       <Header />
       <Slider />
       <HomepageForm />

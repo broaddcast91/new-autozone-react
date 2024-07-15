@@ -8,7 +8,7 @@ const tabs = ['SCV Goods Carrier', 'LCV Goods Carrier', 'LCV Passenger'];
 const navigation = {
   categories: [
     {
-      id: 'vehicles',
+      id: '1',
       name: 'Vehicles',
       featured: [
         {
@@ -85,6 +85,7 @@ const navigation = {
           price: '₹ 5,35,000*',
         },
       ],
+
       featured2: [
         {
           name: 'Partner 6 Type',
@@ -110,7 +111,7 @@ const navigation = {
           name: 'School Bus',
           brand_logo:
             'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/invicto/Invicto+Logo-header.webp',
-          href: '/maruti-invicto-price-in-hyderabad',
+          href: '/school-bus',
           imageSrc: require('../assets/thumbnails/MiTR-School-Bus.jpg'),
           imageAlt: 'School Bus',
           price: '₹ 24,79,000*',
@@ -119,7 +120,7 @@ const navigation = {
           name: 'Staff Bus',
           brand_logo:
             'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/fronx/Flash_header_Menu_logo.webp',
-          href: '/maruti-fronx-price-in-hyderabad',
+          href: '/staff-bus',
           imageSrc: require('../assets/thumbnails/MiTR-Staff-Bus.jpg'),
           imageAlt: 'Staff Bus',
           price: '₹ 7,46,500*',
@@ -127,39 +128,26 @@ const navigation = {
       ],
     },
   ],
-  pages: [
-    { name: 'Home', to: '/' },
-    { name: 'About', to: '/about' },
-    { name: 'Awards', to: '/awards' },
-    { name: 'Careers', to: '/careers' },
-  ],
+
   servicepages: [
     {
       name: 'Insurance',
-      to: '/maruti-car-insurance',
+      to: '/insurance',
     },
     {
       name: 'Finance',
-      to: '/maruti-car-finance',
-    },
-    {
-      name: 'Corporate',
-      to: '/corporate',
+      to: '/finance',
     },
   ],
 
   outlets: [
     {
       name: 'Showrooms',
-      to: '/maruti-nexa-showroom-outlets-in-hyderabad',
+      to: '/showrooms',
     },
     {
       name: 'Workshop',
-      to: '/maruti-nexa-workshop-outlets-in-hyderabad',
-    },
-    {
-      name: 'Truevalue',
-      to: '/maruti-nexa-truevalue-outlets-in-hyderabad',
+      to: '/workshop',
     },
   ],
   more: [
@@ -176,7 +164,7 @@ function classNames(...classes) {
 
 function MainHeader({ category, menuoption }) {
   const [navbar, setNavbar] = useState(false);
-  const [setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   useEffect(() => {
@@ -198,6 +186,112 @@ function MainHeader({ category, menuoption }) {
   return (
     <div className={navbar ? 'bg-white px-0 border' : 'bg-white px-3 border'}>
       {/* Mobile menu */}
+      {open && (
+        <div className='fixed inset-0 flex z-40 lg:hidden'>
+          <div
+            className='fixed inset-0 bg-black bg-opacity-25'
+            aria-hidden='true'
+            onClick={() => setOpen(false)}
+          ></div>
+          <div className='relative max-w-xs w-full bg-white shadow-xl pb-12 flex flex-col overflow-y-auto'>
+            <div className='px-4 pt-5 pb-2 flex'>
+              <button
+                type='button'
+                className='text-gray-400 hover:text-gray-500'
+                onClick={() => setOpen(false)}
+              >
+                <span className='sr-only'>Close menu</span>
+                <svg
+                  className='h-6 w-6'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
+                    d='M6 18L18 6M6 6l12 12'
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div className='mt-2'>
+              <nav className='space-y-1'>
+                <Link
+                  to='/'
+                  className='block px-4 py-2 text-base font-medium text-gray-900 hover:bg-gray-100'
+                >
+                  Home
+                </Link>
+
+                <Link
+                  to='/about'
+                  className='block px-4 py-2 text-base font-medium text-gray-900 hover:bg-gray-100'
+                >
+                  About Us
+                </Link>
+
+                {navigation.categories.map((category) => (
+                  <Popover key={category.name}>
+                    {({ open }) => (
+                      <>
+                        <Popover.Button
+                          className={classNames(
+                            open ? 'text-red-600' : 'text-black-200',
+                            'flex items-center justify-between w-full px-4 py-2 text-base font-medium text-gray-900 hover:bg-gray-100'
+                          )}
+                        >
+                          <span>{category.name}</span>
+                          <ChevronDownIcon
+                            className={classNames(
+                              open ? 'text-red-600' : 'text-black-200',
+                              'ml-2 h-5 w-5 text-gray-400'
+                            )}
+                            aria-hidden='true'
+                          />
+                        </Popover.Button>
+                        <Transition
+                          show={open}
+                          enter='transition ease-out duration-200'
+                          enterFrom='opacity-0'
+                          enterTo='opacity-100'
+                          leave='transition ease-in duration-150'
+                          leaveFrom='opacity-100'
+                          leaveTo='opacity-0'
+                        >
+                          <Popover.Panel static>
+                            <div className='space-y-1'>
+                              {/* Display featured */}
+                              {category.featured.map((item) => (
+                                <Link
+                                  key={item.name}
+                                  to={item.href}
+                                  className='block px-4 py-2 text-base font-medium text-gray-900 hover:bg-gray-100'
+                                >
+                                  {item.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </Popover.Panel>
+                        </Transition>
+                      </>
+                    )}
+                  </Popover>
+                ))}
+
+                <Link
+                  to='/contact'
+                  className='block px-4 py-2 text-base font-medium text-gray-900 hover:bg-gray-100'
+                >
+                  Contact
+                </Link>
+              </nav>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Desktop, Tab Menu */}
       <div

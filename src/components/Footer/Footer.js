@@ -139,12 +139,12 @@ const MiddleFooter = () => {
             <h2 className='text-lg font-semibold mb-4'>OTHERS</h2>
             <ul>
               <li>
-                <a href='#/' className='block py-1'>
+                <a href='/about' className='block py-1'>
                   About Us
                 </a>
               </li>
               <li>
-                <a href='#/' className='block py-1'>
+                <a href='/contact' className='block py-1'>
                   Contact Us
                 </a>
               </li>
