@@ -12,9 +12,9 @@ const TopHeader = () => {
     <div className='bg-[#9E2A31] text-white'>
       <div className='container mx-auto flex justify-between items-center py-2 px-4'>
         <div className='flex items-center space-x-4'>
-          <button className='text-sm hover:bg-[#6E1D22]  px-3 py-1 rounded-3xl'>
+          {/* <button className='text-sm hover:bg-[#6E1D22]  px-3 py-1 rounded-3xl'>
             Offers
-          </button>
+          </button> */}
           <Link to='/book-a-service'>
             <button className='text-sm hover:bg-[#6E1D22] px-3 py-1 rounded-3xl'>
               Book a Service

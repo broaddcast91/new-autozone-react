@@ -25,6 +25,7 @@ import BookAService from './pages/BookAService';
 import StaffBus from './pages/Vehicles/StaffBus';
 import SchoolBus from './pages/Vehicles/SchoolBus';
 import PartnerTruck from './pages/Vehicles/PartnerTruck';
+import Thankyou from './pages/Thankyou';
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
             <Route path='/finance' element={<Finance />} />
             <Route path='/insurance' element={<Insurance />} />
             <Route path='/book-a-service' element={<BookAService />} />
+            <Route path='/thankyou' element={<Thankyou />} />
           </Routes>
         </DefaultScrolltoTop>
       </BrowserRouter>

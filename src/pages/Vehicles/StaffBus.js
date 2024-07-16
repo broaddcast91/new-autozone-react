@@ -174,9 +174,9 @@ const ExploreCards = () => {
 
               <div className='flex justify-center items-center h-52'>
                 <img
-                  src='https://al-website-uat-contents.s3.ap-south-1.amazonaws.com/uploads/2024/02/MiTR-Staff-Bus_Banner-Mobile-360x288px.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZC5D6DIGERJ3UP44%2F20240715%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20240715T102309Z&X-Amz-SignedHeaders=host&X-Amz-Expires=28800&X-Amz-Signature=ac2af3fc81bd03ed13d4f249756e0f3a5f2d38ca79d116b6f4eb37bfd5b34dba'
+                  src={require('../../assets/thumbnails/staffbus-tn-2.jpg')}
                   alt=''
-                  className='max-h-full max-w-full p-5'
+                  className='max-h-full max-w-full p-5 rounded-2xl'
                 />
               </div>
             </div>
@@ -215,7 +215,7 @@ const ExploreCards = () => {
 
               <div className='flex justify-center items-center h-52'>
                 <img
-                  src='https://al-website-uat-contents.s3.ap-south-1.amazonaws.com/uploads/2024/02/02_MiTR-Staff-Bus_Banner-Mobile-360x288px.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZC5D6DIGERJ3UP44%2F20240715%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20240715T102309Z&X-Amz-SignedHeaders=host&X-Amz-Expires=28800&X-Amz-Signature=f5e5a13dddb9fb7c5e69afee29d115f8b74b0593ac0b0b0ad0ba01587734b698'
+                  src={require('../../assets/thumbnails/staffbuss-tn-1.jpg')}
                   alt=''
                   className='max-h-full max-w-full p-6 rounded-3xl'
                 />

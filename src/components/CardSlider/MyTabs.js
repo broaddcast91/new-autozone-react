@@ -563,7 +563,7 @@ const Tab3Content = () => {
         >
           {passengerproducts.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className='flex flex-col bg-[#eee] rounded shadow-lg border relative overflow-hidden w-full'>
+              <div className='flex flex-col bg-[#eee] rounded-3xl shadow-lg border relative overflow-hidden w-full'>
                 <div className='flex-auto overflow-hidden'>
                   <Link to={item.explore}>
                     <img

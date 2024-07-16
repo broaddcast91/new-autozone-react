@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, ChevronDownIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const tabs = ['SCV Goods Carrier', 'LCV Goods Carrier', 'LCV Passenger'];
 
@@ -402,8 +403,8 @@ function MainHeader({ category, menuoption }) {
                                                 SCV Goods Carrier
                                               </div>
                                               <div className='ml-auto'>
-                                                <a
-                                                  href='/allvehicles'
+                                                <HashLink
+                                                  to ='/allvehicles#scvgc'
                                                   className='relative inline-flex items-center px-8 py-2 overflow-hidden text-base font-medium text-[#9E2A31] border-2 border-[#9E2A31] rounded-full hover:text-white group hover:bg-gray-50'
                                                 >
                                                   <span className='absolute left-0 block w-full h-0 transition-all bg-[#9E2A31] group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease'></span>
@@ -426,7 +427,7 @@ function MainHeader({ category, menuoption }) {
                                                   <span className='relative'>
                                                     View All
                                                   </span>
-                                                </a>
+                                                </HashLink>
                                               </div>
                                             </div>
                                             <div className='grid grid-cols-4 gap-4 py-6'>
@@ -473,8 +474,10 @@ function MainHeader({ category, menuoption }) {
                                                 LCV Goods Carrier
                                               </div>
                                               <div className='ml-auto'>
-                                                <a
-                                                  href='#_'
+                                                <HashLink
+                                                  to='/allvehicles#lcvgc'
+                                                  smooth={true}
+                                                  duration={500}
                                                   className='relative inline-flex items-center px-8 py-2 overflow-hidden text-base font-medium text-[#9E2A31] border-2 border-[#9E2A31] rounded-full hover:text-white group hover:bg-gray-50'
                                                 >
                                                   <span className='absolute left-0 block w-full h-0 transition-all bg-[#9E2A31] group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease'></span>
@@ -497,7 +500,7 @@ function MainHeader({ category, menuoption }) {
                                                   <span className='relative'>
                                                     View All
                                                   </span>
-                                                </a>
+                                                </HashLink>
                                               </div>
                                             </div>
                                             <div className='grid grid-cols-4 gap-4 py-6'>
@@ -546,8 +549,8 @@ function MainHeader({ category, menuoption }) {
                                                 LCV Passenger
                                               </div>
                                               <div className='ml-auto'>
-                                                <a
-                                                  href='#_'
+                                                <HashLink
+                                                  to='/allvehicles#lcvpc'
                                                   className='relative inline-flex items-center px-8 py-2 overflow-hidden text-base font-medium text-[#9E2A31] border-2 border-[#9E2A31] rounded-full hover:text-white group hover:bg-gray-50'
                                                 >
                                                   <span className='absolute left-0 block w-full h-0 transition-all bg-[#9E2A31] opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease'></span>
@@ -570,7 +573,7 @@ function MainHeader({ category, menuoption }) {
                                                   <span className='relative'>
                                                     View All
                                                   </span>
-                                                </a>
+                                                </HashLink>
                                               </div>
                                             </div>
                                             <div className='grid grid-cols-4 gap-4 py-6'>

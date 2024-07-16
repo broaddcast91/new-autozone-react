@@ -19,6 +19,8 @@ import './vehicles.css';
 import { FaHandPointRight } from 'react-icons/fa';
 import { PiPaperPlaneRightFill } from 'react-icons/pi';
 import HomepageForm from '../../components/HomepageForm';
+import { Link } from 'react-router-dom';
+import { SiCoronaengine } from 'react-icons/si';
 
 const exterior = [
   {
@@ -112,13 +114,13 @@ const BadaDosti2Hero = () => {
       >
         <img
           className='absolute inset-0 w-full h-full object-cover'
-          src={require('../../assets/banners/01_Dost-XL_Banner-Desktop-1440x620px.jpg')}
+          src={require('../../assets/banners/MiTR-School-Bus_Banner-Desktop-1440x620px.jpg')}
           alt='dost-banner'
         />
         <div className='absolute inset-0 bg-black opacity-50'></div>
         <div className='relative  flex items-center justify-center h-full'>
           <h1 className='text-4xl md:text-6xl lg:text-8xl font-bold text-white text-center'>
-            Dost XL
+            MiTR School Bus
           </h1>
         </div>
       </div>
@@ -132,7 +134,7 @@ const ExploreCards = () => {
       <div className='bg-white mt-10'>
         <div className='container mx-auto py-10'>
           <div className='text-3xl font-bold'>
-            Explore and experience Bada Dost <br /> in a whole new way.{' '}
+            Explore and experience MiTR School Bus <br /> in a whole new way.{' '}
           </div>
         </div>
         <Swiper
@@ -255,14 +257,17 @@ const VehicleInfo = () => {
       <div className='container mx-auto py-10 mt-10'>
         <div className='flex justify-between items-center p-4'>
           <div className='text-left'>
-            <p className='text-4xl font-bold'>Dost XL</p>
+            <p className='text-4xl font-bold'>MiTR School Bus</p>
           </div>
 
           <div className='flex justify-end items-center space-x-4 text-right'>
             <div>
-              <p className='text-lg font-semibold underline'>
-                Download Brochure
-              </p>
+              <Link to='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/sabooautozone/pdfs/Ashok-Leyland-MiTR-School-Bus-Brochure.pdf'>
+                {' '}
+                <p className='text-lg font-semibold underline'>
+                  Download Brochure
+                </p>
+              </Link>
             </div>
             <div>
               <a
@@ -306,7 +311,7 @@ const TabLayout = () => {
     <div className='container mx-auto'>
       <Tab.Group>
         <Tab.List className='flex flex-row space-x-1 border-b-2 border-gray-300'>
-          {['Dost XL', 'SPECIFICATIONS'].map((tab) => (
+          {['MiTR School Bus', 'SPECIFICATIONS'].map((tab) => (
             <Tab
               key={tab}
               className={({ selected }) =>
@@ -365,7 +370,7 @@ const Tab1Content = () => {
                 POWER
               </div>
               <p className='text-gray-700 text-5xl font-semibold flex-grow'>
-                70<span className='text-3xl font-normal'>hp</span>
+                140<span className='text-3xl font-normal'>hp</span>
               </p>
               <div className='absolute bottom-4 right-4 text-5xl text-[#9e2a328d]'>
                 <ImPower />
@@ -375,13 +380,13 @@ const Tab1Content = () => {
           <div className='max-w-sm rounded-3xl overflow-hidden shadow-lg bg-white h-64 border border-[#9e2a3233] relative'>
             <div className='p-6 h-full flex flex-col'>
               <div className='font-bold text-base mb-2 text-[#9E2A31]'>
-                TOP SPEED
+                MAX TORQUE
               </div>
               <p className='text-gray-700 text-5xl font-semibold flex-grow'>
-                80<span className='text-3xl font-normal'>km/h</span>
+                360<span className='text-3xl font-normal'>Nm</span>
               </p>
               <div className='absolute bottom-4 right-4 text-6xl text-[#9e2a328d]'>
-                <MdSpeed />
+                <SiCoronaengine />
               </div>
             </div>
           </div>
@@ -391,7 +396,8 @@ const Tab1Content = () => {
                 SEATS
               </div>
               <p className='text-gray-700 text-5xl font-semibold flex-grow'>
-                1<span className='font-normal text-3xl'>+</span>2
+                22<span className='font-normal text-3xl'>+</span>A
+                <span className='font-normal text-3xl'>+</span>D
               </p>
               <div className='absolute bottom-4 right-4 text-6xl text-[#9e2a328d]'>
                 <MdAirlineSeatReclineExtra />
@@ -400,11 +406,9 @@ const Tab1Content = () => {
           </div>
           <div className='max-w-sm rounded-3xl overflow-hidden shadow-lg bg-white h-64 border border-[#9e2a3233] relative'>
             <div className='p-6 h-full flex flex-col'>
-              <div className='font-bold text-base mb-2 text-[#9E2A31]'>
-                PAYLOAD CAPACITY
-              </div>
+              <div className='font-bold text-base mb-2 text-[#9E2A31]'>GVW</div>
               <p className='text-gray-700 text-5xl font-semibold flex-grow'>
-                1425<span className='text-3xl font-normal'>kg</span>
+                6650<span className='text-3xl font-normal'>kg</span>
               </p>
               <div className='absolute bottom-4 right-4 text-6xl text-[#9e2a328d]'>
                 <FaTruckLoading />
@@ -438,7 +442,7 @@ const Tab2Specifications = () => {
               role='button'
               className='btn m-1 text-3xl flex items-center text-[#9E2A31]'
             >
-              Dost XL
+              MiTR School Bus
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-5 w-5 ml-1'
@@ -461,12 +465,14 @@ const Tab2Specifications = () => {
             >
               <li className='text-3xl rounded-md hover:bg-red-200 text-[#9E2A31]'>
                 <a>
-                  Dost XL| <span className='text-xs ml-4'>Price</span> ₹ 9.00 L
+                  MiTR School Bus| <span className='text-xs ml-4'>Price</span> ₹
+                  24.79 L
                 </a>
               </li>
               <li>
                 <a className='text-3xl hover:bg-red-200 text-[#9E2A31]'>
-                  Dost XL| <span className='text-xs ml-4'>Price</span> ₹ 9.00 L
+                  MiTR School Bus| <span className='text-xs ml-4'>Price</span> ₹
+                  24.79 L
                 </a>
               </li>
             </ul>

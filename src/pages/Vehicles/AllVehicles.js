@@ -89,7 +89,7 @@ const SCVGC = () => {
   ];
   return (
     <>
-      <div className='bg-white'>
+      <div className='bg-white'  id='scvgc'>
         <div className='container mx-auto p-4'>
           <h4 className='text-3xl font-bold mb-4 mt-10'>SCV Goods Carrier</h4>
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
@@ -137,7 +137,7 @@ const LCVGC = () => {
   ];
   return (
     <>
-      <div className='bg-white'>
+      <div className='bg-white' id='lcvgc'>
         <div className='container mx-auto p-4'>
           <h4 className='text-3xl font-bold mb-4 mt-10'>LCV Goods Carrier</h4>
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
@@ -185,34 +185,33 @@ const LCVPC = () => {
   ];
   return (
     <>
-      <div className='bg-white'>
-  <div className='container mx-auto p-4 '>
-    <h4 className='text-3xl font-bold mb-4 mt-10'>LCV Passenger</h4>
-    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
-      {LCVPData.map((card) => (
-        <div
-          key={card.id}
-          className='bg-white shadow-md rounded-lg flex flex-col transition-transform duration-300 ease-in-out transform hover:scale-105'
-        >
-          <div className='aspect-w-1 aspect-h-1 w-full'>
-            <img
-              src={card.img}
-              alt={card.title}
-              className='object-cover rounded-t-lg'
-            />
-          </div>
-          <div className='p-4 flex flex-col items-center'>
-            <h2 className='text-lg font-semibold mb-1'>{card.title}</h2>
-            <p className='text-gray-600 text-sm text-center'>
-              {card.description}
-            </p>
+      <div className='bg-white' id='lcvpc'>
+        <div className='container mx-auto p-4 '>
+          <h4 className='text-3xl font-bold mb-4 mt-10'>LCV Passenger</h4>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+            {LCVPData.map((card) => (
+              <div
+                key={card.id}
+                className='bg-white shadow-md rounded-lg flex flex-col transition-transform duration-300 ease-in-out transform hover:scale-105'
+              >
+                <div className='aspect-w-1 aspect-h-1 w-full'>
+                  <img
+                    src={card.img}
+                    alt={card.title}
+                    className='object-cover rounded-t-lg'
+                  />
+                </div>
+                <div className='p-4 flex flex-col items-center'>
+                  <h2 className='text-lg font-semibold mb-1'>{card.title}</h2>
+                  <p className='text-gray-600 text-sm text-center'>
+                    {card.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
-
+      </div>
     </>
   );
 };
