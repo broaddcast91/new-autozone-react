@@ -19,6 +19,7 @@ import './vehicles.css';
 import { FaHandPointRight } from 'react-icons/fa';
 import { PiPaperPlaneRightFill } from 'react-icons/pi';
 import HomepageForm from '../../components/HomepageForm';
+import { Helmet } from 'react-helmet';
 
 const exterior = [
   {
@@ -89,17 +90,60 @@ function classNames(...classes) {
 
 const BadaDostCNG = () => {
   return (
-    <div className='bg-white'>
-      <MainHeader />
-      <BadaDosti2Hero />
-      <HomepageForm />
-      <ExploreCards />
-      <VehicleInfo />
-      <TabLayout />
-      <GalleryComponent />
-      <HomepageForm />
-      <Footer />
-    </div>
+    <>
+      <Helmet>
+        <title>Bada Dost CNG by Ashok Leyland | Saboo RKS Motor</title>
+        <meta
+          name='title'
+          content='Bada Dost CNG by Ashok Leyland | Saboo RKS Motor'
+        />
+        <meta
+          name='description'
+          content='Discover the Bada Dost CNG by Ashok Leyland at Saboo RKS Motor. Experience eco-friendly and efficient performance with advanced features tailored for superior utility and reliability.'
+        />
+        {/* <meta
+          name="keywords"
+          content="alto on road price, alto offers, alto price, alto service center, maruti alto on road price, maruti alto offers, maruti alto price, maruti alto service center, maruti alto service center near me, maruti suzuki alto price, maruti suzuki alto on road price, maruti suzuki alto offers,maruti suzuki alto, alto on road price, alto 2024 offers, alto 2024 price, alto on road price in hyderabad, breza offers in hyderabad, alto price in hyderabad, maruti alto 2024 price, maruti alto 2024 on road price, maruti alto 2024 offers, maruti alto 2022 price in hyderabad, maruti alto 2022 on road price in hyderabad, Maruti Suzuki alto 2022 price, Maruti Suzuki alto 2022 on road price, maruti suzuki alto 2022 offers,  vitara alto offers, Vitara alto price, vitara alto on road price, vitara alto 2022 offers, vitara alto 2022 price, vitara alto 2022 on road price, vitara alto 2022 offers"
+        /> */}
+        <meta name='author' content='Broaddcast' />
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:url'
+          content='https://www.autozone.in/bada-dost-cng'
+        />
+        <meta
+          property='og:title'
+          content='Bada Dost CNG by Ashok Leyland | Saboo RKS Motor'
+        />
+        <meta
+          property='og:description'
+          content='Discover the Bada Dost CNG by Ashok Leyland at Saboo RKS Motor. Experience eco-friendly and efficient performance with advanced features tailored for superior utility and reliability.'
+        />
+        <meta property='og:image' content='' />
+        <meta property='twitter:card' content='summary_large_image' />
+        <meta property='twitter:url' content='https://x.com/sabooautozone1' />
+        <meta
+          property='twitter:title'
+          content='Maruti Suzuki Alto 800 Price in Hyderabad| Alto Mileage, Features, Specification | Saboo Maruti'
+        />
+        <meta
+          property='twitter:description'
+          content='Maruti Suzuki Alto 800 Price in Hyderabad & Secunderabad. Alto 2022 Price Starts at 3.39* LakhBest price and offers on Maruti Alto 800 at Saboo Maruti. Visit your nearest Saboo Maruti Showroom for best deals.'
+        />
+        <meta property='twitter:image' content='img/og-tags/alto.webp' />
+      </Helmet>
+      <div className='bg-white'>
+        <MainHeader />
+        <BadaDosti2Hero />
+        <HomepageForm />
+        <ExploreCards />
+        <VehicleInfo />
+        <TabLayout />
+        <GalleryComponent />
+        <HomepageForm />
+        <Footer />
+      </div>
+    </>
   );
 };
 

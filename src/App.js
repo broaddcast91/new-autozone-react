@@ -1,4 +1,5 @@
 import './App.css';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import ScrollToTop from './components/ScrollToTop';
@@ -30,6 +31,7 @@ import Thankyou from './pages/Thankyou';
 function App() {
   return (
     <>
+      <Popup />
       <ScrollToTop />
       <BrowserRouter>
         <DefaultScrolltoTop>
@@ -67,5 +69,69 @@ function App() {
     </>
   );
 }
+
+export const Popup = () => {
+  const [isPopupVisible, setPopupVisible] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState('');
+
+  useEffect(() => {
+    // Show the popup when the component mounts
+    setPopupVisible(true);
+  }, []);
+
+  const handleClosePopup = () => {
+    setPopupVisible(false);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // You can handle form submission logic here, e.g., submit to backend or store locally
+    console.log('Phone Number submitted:', phoneNumber);
+    // For demo, clear the input after submission
+    setPhoneNumber('');
+    // Close the popup after submission (remove/comment if not needed)
+    setPopupVisible(false);
+  };
+
+  return (
+    <>
+      {isPopupVisible && (
+        <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50'>
+          <div className='bg-white p-8 rounded-lg shadow-lg text-center max-w-md'>
+            <h2 className='text-2xl font-bold mb-4'>Subscribe to Updates</h2>
+            <p className='text-gray-600 mb-6'>
+              Enter your phone number to receive updates.
+            </p>
+            <form onSubmit={handleSubmit}>
+              <div className='mb-4'>
+                <input
+                  type='tel'
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  placeholder='Enter your phone number'
+                  className='px-4 py-2 border border-gray-300 rounded-3xl w-full focus:outline-none focus:border-[#9E2A31]'
+                  required
+                />
+              </div>
+              <button
+                type='submit'
+                className='bg-[#9E2A31] text-white px-4 py-2 rounded-3xl hover:bg-red-700 transition duration-300 mr-2'
+              >
+                Submit
+              </button>
+              <button
+                type='button'
+                onClick={handleClosePopup}
+                className='text-gray-600 px-4 py-2 rounded-3xl hover:text-red-600 focus:outline-none'
+              >
+                Close
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
 
 export default App;

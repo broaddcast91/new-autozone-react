@@ -11,12 +11,9 @@ const TopHeader = () => {
   return (
     <div className='bg-[#9E2A31] text-white'>
       <div className='container mx-auto flex justify-between items-center py-2 px-4'>
-        <div className='flex items-center space-x-4'>
-          {/* <button className='text-sm hover:bg-[#6E1D22]  px-3 py-1 rounded-3xl'>
-            Offers
-          </button> */}
+        <div className='flex items-start space-x-4'>
           <Link to='/book-a-service'>
-            <button className='text-sm hover:bg-[#6E1D22] px-3 py-1 rounded-3xl'>
+            <button className='text-sm bg-white text-[#6E1D22] hover:bg-slate-100 px-3 py-1 rounded-3xl border border-white'>
               Book a Service
             </button>
           </Link>

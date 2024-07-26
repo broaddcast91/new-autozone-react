@@ -8,6 +8,7 @@ import OurCoreValues from '../components/OurCoreValues/OurCoreValues';
 import UltimateJourney from '../components/UltimateJourney/UltimateJourney';
 import Footer from '../components/Footer/Footer';
 import TopHeader from './TopHeader';
+import { Popup } from '../App';
 
 const Home = () => {
   return (
